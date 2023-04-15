@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIt
 
-pragma solidity ^0.8.18;
+pragma solidity >=0.6.8 <=0.8.18;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
@@ -22,7 +22,7 @@ library PriceCalculator {
   *         >> TV = ( PV / PL )
   *  
   */   
-function wUNI_V3_POSPriceCalculator(IUniswapV3Pool _pool) internal view returns(uint256 _wUNI_V3_POSPrice){
+function wUNI_V3_POSPriceCalculator(IUniswapV3Pool _pool) internal view returns(uint192 _wUNI_V3_POSPrice, uint192 _whole_wUNI_V3_POSPrice){
     // temp variables 
     ERC20 tempToken0 = ERC20(_pool.token0());
     ERC20 tempToken1 = ERC20(_pool.token1());
@@ -42,7 +42,7 @@ function wUNI_V3_POSPriceCalculator(IUniswapV3Pool _pool) internal view returns(
     uint256 TV = (PV / PL);
 
     // returning the statment
-    return TV;
+    return (uint192(TV), uint192(PV));
 
 }
 

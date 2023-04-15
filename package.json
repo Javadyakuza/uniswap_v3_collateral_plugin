@@ -21,6 +21,7 @@
     "@chainlink/contracts": "^0.6.1",
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@openzeppelin/contracts": "^4.8.2",
+    "@uniswap/v3-core-optimism": "^1.0.0-rc.0",
     "@uniswap/v3-periphery": "^1.4.3"
   },
   "devDependencies": {
