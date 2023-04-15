@@ -237,13 +237,6 @@ contract UNI_V3_POS_Wrapper is Ownable {
         return PriceCalculator.wUNI_V3_POSPriceCalculator(_pool);
     }
 
-    struct CollectParams {
-        uint256 tokenId;
-        address recipient;
-        uint128 amount0Max;
-        uint128 amount1Max;
-    }
-
     function claimRewards(
         address _sender,
         uint256 _positionId,
